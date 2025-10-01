@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Power Calculator</title>
+</head>
+<body bgcolor="blue">
+    <center><h2>Power Calculation of Lamp Filament</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Intensity (I):</label>
+        <input type="text" name="intensity" required><br><br>
+
+        <label>Resistance (R):</label>
+        <input type="text" name="resistance" required><br><br>
+
+        <button type="submit">Calculate Power</button>
+    </form>
+
+    {% if power is not None %}
+        <h3>Result: Power (P) = {{ power }} watts</h3>
+    {% endif %}
+    </center>
+</body>
+</html>
